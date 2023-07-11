@@ -256,3 +256,23 @@ input::placeholder {
   font-size: 12px;
   margin-right: 28px;
 }
+
+/* scrollbar */
+.obtained-list {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.obtained-list::-webkit-scrollbar {
+  width: 10px;
+}
+
+.obtained-list::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 50px;
+  border: 3px solid #fbe2e2;
+}
+
+.obtained-list::-webkit-scrollbar-track {
+  background-color: #fbe2e2;
+}
