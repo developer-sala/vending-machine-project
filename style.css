@@ -45,8 +45,12 @@ h1 {
 
 /* 공통 */
 main {
-  display: flex;
-  gap: 28px;
+  display: grid;
+  grid-template-areas:
+    'a b'
+    'a c';
+  grid-column-gap: 28px;
+  grid-row-gap: 20px;
   justify-content: center;
   margin-top: 67px;
 }
@@ -56,6 +60,7 @@ main {
   width: 360px;
   height: 545px;
   background-color: #fff;
+  grid-area: a;
 }
 
 .character-img {
@@ -157,7 +162,97 @@ input::placeholder {
   font-weight: 700;
 }
 
-.section1 img,
-.section3 img {
+.section1 img {
   width: 70px;
+}
+
+/* section 2 */
+.section2 {
+  width: 360px;
+  height: 50px;
+  background-color: #fff;
+  grid-area: b;
+}
+
+.cash-box {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-top: 9px;
+  margin-left: 27px;
+  margin-right: 27px;
+  background-color: #fbe2e2;
+  width: 306px;
+  height: 32px;
+  padding-top: 6px;
+  border-radius: 5px;
+}
+.money-in-hand-text {
+  padding-left: 10px;
+}
+.money-in-hand {
+  padding-right: 10px;
+}
+
+/* section 3 */
+.section3 {
+  width: 360px;
+  height: 474px;
+  background-color: #fff;
+  grid-area: c;
+}
+
+.obtained-title {
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.obtained-list {
+  background-color: #fbe2e2;
+  border: 1px solid black;
+  margin: 13px 27px 6px 27px;
+  border: 1px solid rgba(189, 189, 189, 1);
+  border-radius: 5px;
+  width: 306px;
+  height: 364px;
+}
+
+.section3 li {
+  margin: 12px 18px 0px 12px;
+  width: 276px;
+  height: 46px;
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.obtained-character {
+  font-size: 9px;
+  margin-left: 6px;
+}
+
+.count {
+  font-size: 14px;
+  border: 1px solid rgba(189, 189, 189, 1);
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 5px;
+  margin-left: 150px;
+}
+
+.section3 img {
+  width: 40px;
+  margin-left: 3px;
+}
+
+.total {
+  display: block;
+  text-align: right;
+  font-size: 12px;
+  margin-right: 28px;
 }
