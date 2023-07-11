@@ -1,0 +1,163 @@
+/* reset */
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  border: none;
+  background-color: #ffff;
+  cursor: pointer;
+}
+
+/* 전체 스타일 */
+* {
+  box-sizing: border-box;
+  margin-top: 0;
+}
+
+body {
+  background-color: #fbe2e2;
+}
+
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+h1 {
+  margin: 0;
+}
+
+.banner {
+  display: block;
+  width: 386px;
+  margin: 0 auto;
+}
+
+/* 공통 */
+main {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  margin-top: 67px;
+}
+
+/* section 1 */
+.section1 {
+  width: 360px;
+  height: 545px;
+  background-color: #fff;
+}
+
+.character-img {
+  height: 65px;
+}
+
+.character-list {
+  display: grid;
+  grid-template-rows: 130px 130px;
+  grid-template-columns: 94px 94px 94px;
+  grid-gap: 12px;
+  justify-content: center;
+  place-items: center;
+  margin-top: 31px;
+}
+
+.btn-character {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  width: 94px;
+  height: 130px;
+}
+
+.btn-character:hover {
+  border: 3px solid #eb5757;
+}
+
+.character-name {
+  font-size: 9px;
+  line-height: 13.03px;
+  color: rgba(51, 51, 51, 1);
+  margin-bottom: 7px;
+}
+
+.character-price {
+  background-color: #faa2a2;
+  border-radius: 50px;
+  font-size: 12px;
+  width: 70px;
+  height: 22px;
+  line-height: 22px;
+}
+
+.container {
+  margin-top: 20px;
+  display: grid;
+  grid-template-rows: 32px 32px 106px;
+  grid-template-columns: 200px 94px;
+  grid-gap: 12px;
+  justify-content: center;
+}
+
+.balance-box {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fbe2e2;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.balance-text {
+  padding-left: 10px;
+}
+
+.balance-money {
+  padding-right: 10px;
+}
+
+#input-money {
+  border-radius: 5px;
+}
+
+input::placeholder {
+  font-size: 13px;
+}
+
+.btn {
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
+  font-size: 13px;
+  padding: 0;
+  border-radius: 5px;
+}
+
+.shopping-list {
+  background-color: #fbe2e2;
+  overflow: hidden;
+}
+
+.btn-obtain {
+  background-color: #faa1a2;
+  border-radius: 5px;
+  font-size: 13px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.section1 img,
+.section3 img {
+  width: 70px;
+}
