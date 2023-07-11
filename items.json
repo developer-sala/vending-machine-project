@@ -1,0 +1,38 @@
+[
+  {
+    "name": "character1",
+    "price": 1000,
+    "img": "character.svg",
+    "count": 5
+  },
+  {
+    "name": "character2",
+    "price": 1000,
+    "img": "character.svg",
+    "count": 5
+  },
+  {
+    "name": "character3",
+    "price": 1000,
+    "img": "character.svg",
+    "count": 5
+  },
+  {
+    "name": "character4",
+    "price": 1000,
+    "img": "character.svg",
+    "count": 5
+  },
+  {
+    "name": "character5",
+    "price": 1000,
+    "img": "character.svg",
+    "count": 5
+  },
+  {
+    "name": "character6",
+    "price": 1000,
+    "img": "character.svg",
+    "count": 5
+  }
+]
