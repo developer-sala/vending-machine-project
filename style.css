@@ -86,6 +86,7 @@ main {
   border-radius: 10px;
   width: 94px;
   height: 130px;
+  position: relative;
 }
 
 .btn-character:hover {
@@ -162,8 +163,32 @@ input::placeholder {
   font-weight: 700;
 }
 
-.section1 img {
-  width: 70px;
+.section1 .shopping-list img {
+  width: 50px;
+  margin-left: 4px;
+}
+
+.cart-character {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  margin: 12px 8px 6px 12px;
+  border-radius: 5px;
+}
+
+.obtained-character {
+  font-size: 9px;
+}
+.section1 .count {
+  font-size: 14px;
+  border: 1px solid rgba(189, 189, 189, 1);
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 5px;
+  margin-left: 25px;
 }
 
 /* section 2 */
@@ -234,7 +259,7 @@ input::placeholder {
   margin-left: 6px;
 }
 
-.count {
+.section3 .count {
   font-size: 14px;
   border: 1px solid rgba(189, 189, 189, 1);
   width: 30px;
@@ -258,21 +283,44 @@ input::placeholder {
 }
 
 /* scrollbar */
-.obtained-list {
+.shopping-list {
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
-.obtained-list::-webkit-scrollbar {
+.shopping-list::-webkit-scrollbar {
   width: 10px;
 }
 
-.obtained-list::-webkit-scrollbar-thumb {
+.shopping-list::-webkit-scrollbar-thumb {
   background-color: #fff;
   border-radius: 50px;
   border: 3px solid #fbe2e2;
 }
 
-.obtained-list::-webkit-scrollbar-track {
+.shopping-list::-webkit-scrollbar-track {
   background-color: #fbe2e2;
+}
+
+/* 품절 */
+.soldout {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.soldout span {
+  display: inline-block;
+  color: #fbe2e2;
+  border: 6px double #fbe2e2;
+  padding: 0 8px;
+  width: 65px;
+  height: 44.85px;
+  transform: rotate(-20deg) translate(-12px, 34px);
+  font-size: 14px;
+  word-break: break-all;
 }
