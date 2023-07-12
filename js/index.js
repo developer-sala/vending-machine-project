@@ -1,3 +1,7 @@
 import setup from './characterGenerator.js';
+import bundleOfEvents from './vendingMachineEvents.js';
 
-setup();
+(async () => {
+  await setup();
+  bundleOfEvents();
+})();
