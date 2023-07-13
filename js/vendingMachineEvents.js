@@ -1,4 +1,6 @@
 const cart = document.querySelector('.section1 .shopping-list');
+const obtainBtn = document.querySelector('.btn-obtain');
+const obtainedList = document.querySelector('.obtained-list');
 let items;
 
 const initializeItems = () => {
@@ -66,12 +68,43 @@ const handleItem = (e) => {
   productSoldOut(target);
 };
 
+const handleItemsObtain = () => {
+  const cartItems = cart.children;
+  const obtainedItemsName = [...obtainedList.children].map(
+    (item) => item.dataset.name
+  );
+
+  [...cartItems].forEach((item) => {
+    // 획득한 캐릭터에 있다면 상품 수량 증가
+    if (obtainedItemsName.includes(item.dataset.name)) {
+      const target = obtainedList.querySelector(
+        `data-name="${item.dataset.name}" strong`
+      );
+      target.textContent =
+        parseInt(item.querySelector('strong').textContent) +
+        parseInt(target.textContent);
+    } else {
+      // 획득한 캐릭터가 기존에 없었다면 요소 생성
+      const clone = item.cloneNode(true);
+      obtainedList.appendChild(clone);
+    }
+  });
+  cart.innerHTML = '';
+};
+
 const bundleOfEvents = () => {
   initializeItems();
   console.log(items);
   items.forEach((item) => {
     item.addEventListener('click', handleItem);
   });
+  obtainBtn.addEventListener('click', handleItemsObtain);
 };
 
 export default bundleOfEvents;
+
+// ### 획득 부분
+
+// - 획득 버튼 클릭 시
+// - 획득한 캐릭터가 있는 경우 수량만 증가
+// - 획득한 캐릭터가 없는 경우 요소 생성
