@@ -78,8 +78,9 @@ const handleItemsObtain = () => {
     // 획득한 캐릭터에 있다면 상품 수량 증가
     if (obtainedItemsName.includes(item.dataset.name)) {
       const target = obtainedList.querySelector(
-        `data-name="${item.dataset.name}" strong`
+        `[data-name="${item.dataset.name}"] strong`
       );
+
       target.textContent =
         parseInt(item.querySelector('strong').textContent) +
         parseInt(target.textContent);
@@ -94,7 +95,7 @@ const handleItemsObtain = () => {
 
 const bundleOfEvents = () => {
   initializeItems();
-  console.log(items);
+
   items.forEach((item) => {
     item.addEventListener('click', handleItem);
   });
@@ -102,9 +103,3 @@ const bundleOfEvents = () => {
 };
 
 export default bundleOfEvents;
-
-// ### 획득 부분
-
-// - 획득 버튼 클릭 시
-// - 획득한 캐릭터가 있는 경우 수량만 증가
-// - 획득한 캐릭터가 없는 경우 요소 생성
