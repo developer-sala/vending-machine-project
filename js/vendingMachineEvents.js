@@ -1,6 +1,7 @@
 const cart = document.querySelector('.section1 .shopping-list');
 const obtainBtn = document.querySelector('.btn-obtain');
 const obtainedList = document.querySelector('.obtained-list');
+const total = document.querySelector('.total');
 let items;
 
 const initializeItems = () => {
@@ -17,6 +18,7 @@ const plusCount = (target) => {
 const createCartItem = (data) => {
   const li = document.createElement('li');
   li.dataset.name = data.name;
+  li.dataset.price = data.price;
   li.classList.add('cart-character');
   li.innerHTML = `
     <img src="../img/${data.img}" alt=""/>
@@ -68,11 +70,32 @@ const handleItem = (e) => {
   productSoldOut(target);
 };
 
+// 숫자 형식 변경
+const formatNum = (num) => {
+  return new Intl.NumberFormat().format(num);
+};
+
+const getCartTotal = () => {
+  const cartItems = cart.children;
+  let totalPrice = 0;
+  [...cartItems].forEach((item) => {
+    const quantity = parseInt(item.querySelector('strong').textContent);
+    totalPrice += item.dataset.price * quantity;
+  });
+  return totalPrice;
+};
+
 const handleItemsObtain = () => {
   const cartItems = cart.children;
+  const cartTotal = getCartTotal();
   const obtainedItemsName = [...obtainedList.children].map(
     (item) => item.dataset.name
   );
+
+  // 총금액 변경
+  const currTotal = parseInt(total.textContent.replace(/[^0-9]/g, ''), 10);
+  const totalVal = formatNum(currTotal + cartTotal);
+  total.textContent = `총금액: ${totalVal}원`;
 
   [...cartItems].forEach((item) => {
     // 획득한 캐릭터에 있다면 상품 수량 증가
